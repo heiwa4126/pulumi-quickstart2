@@ -27,11 +27,19 @@ pulumi up
 # ほかメモ
 
 gitにはvenvは入ってないのでクローン先では
+
 ```bash
-git clone ~~~~
+git clone xxxxx
+cd xxxx
 python3 -m venv ./venv
 . ./venv/bin/activate
-pip install -r requirements.txt
+# で、
+pulumi stack select dev
+# または
+pulumi stack new dev2
+pulumi config set aws:region us-east-2
+# で
+pulumi up  # pip install -r requirements.txtは自動でやってくれる(手動でもいいけど)
 ```
 
 しないとダメだ。
